@@ -1,0 +1,17 @@
+.yc-icon {
+  --yc-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--yc-icon-color);
+  font-size: inherit;
+}
+
+// 根据不同的主题，修改颜色
+@each $val in primary, info, success, warning, danger {
+  .yc-icon--#{$val} {
+    --yc-icon-color: var(--yc-color-#{$val});
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "yokyul-component-ui",
+  "version": "1.0.0",
+  "description": "this is a Vue3 components library",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "vue3",
+    "components",
+    "library"
+  ],
+  "files": [
+    "dist"
+  ],
+  "module": "dist/es/yokyul-component-ui.js",
+  "main": "dist/umd/yokyul-component-ui.umd.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/es/yokyul-component-ui.js",
+      "require": "./dist/umd/yokyul-component-ui.umd.cjs"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/umd/style.css"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "pnpm build-es && pnpm build-umd && pnpm move-style",
+    "build-es": "vite build --config vite.es.config.js",
+    "build-umd": "vite build --config vite.umd.config.js",
+    "move-style": "move-file dist/es/style.css dist/style.css",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/vue-fontawesome": "^3.0.5",
+    "@popperjs/core": "^2.11.8",
+    "lodash-es": "^4.17.21"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.3.3",
+    "@vitejs/plugin-vue": "^4.4.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "eslint": "^8.49.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "move-file-cli": "^3.0.0",
+    "prettier": "^3.0.3",
+    "sass": "^1.69.5",
+    "vite": "^4.4.11",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
+  }
+}

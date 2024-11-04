@@ -1,0 +1,57 @@
+.yc-pager {
+  --yc-pager-theme-color: var(--yc-color-primary);
+  --yc-pager-size: 34px;
+  --yc-pager-padding: 0 12px;
+  --yc-pager-font-size: var(--yc-font-size-base);
+}
+
+.yc-pager {
+  text-align: center;
+  a {
+    border: 1px solid #e1e2e3;
+    background-color: #f0f2f5;
+    color: #303133;
+    height: var(--yc-pager-size);
+    display: inline-block;
+    line-height: var(--yc-pager-size);
+    border-radius: 2px;
+    padding: var(--yc-pager-padding);
+    margin: 8px;
+    font-size: var(--yc-pager-font-size);
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+      color: var(--yc-pager-theme-color);
+    }
+    /* 当前页会挂上 active 类 */
+    &.active {
+      color: #fff;
+      background-color: var(--yc-pager-theme-color);
+      border-color: var(--yc-pager-theme-color);
+    }
+    /* 禁用时会挂上 disabled 类 */
+    &.disabled {
+      color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// 根据不同的主题，修改颜色
+@each $val in primary, success, warning, info, danger {
+  .yc-pager--#{$val} {
+    --yc-pager-theme-color: var(--yc-color-#{$val});
+  }
+}
+
+// 不同大小的样式
+.yc-pager--small {
+  --yc-pager-size: 25px;
+  --yc-pager-padding: 0 8px;
+  --yc-pager-font-size: var(--yc-font-size-small);
+}
+.yc-pager--large {
+  --yc-pager-size: 44px;
+  --yc-pager-padding: 0 16px;
+  --yc-pager-font-size: var(--yc-font-size-large);
+}

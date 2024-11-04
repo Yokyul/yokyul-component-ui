@@ -1,0 +1,61 @@
+.yc-collapse {
+  --yc-collapse-border-color: var(--yc-border-color-light);
+  --yc-collapse-header-height: 48px;
+  --yc-collapse-header-bg-color: var(--yc-fill-color-blank);
+  --yc-collapse-header-text-color: var(--yc-text-color-primary);
+  --yc-collapse-header-font-size: 13px;
+  --yc-collapse-content-bg-color: var(--yc-fill-color-blank);
+  --yc-collapse-content-font-size: 13px;
+  --yc-collapse-content-text-color: var(--yc-text-color-primary);
+  --yc-collapse-disabled-text-color: var(--yc-disabled-text-color);
+  --yc-collapse-disabled-border-color: var(--yc-border-color-lighter);
+  border-top: 1px solid var(--yc-collapse-border-color);
+  width: 100%;
+}
+
+.yc-collapse-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--yc-collapse-header-height);
+  line-height: var(--yc-collapse-header-height);
+  background-color: var(--yc-collapse-header-bg-color);
+  color: var(--yc-collapse-header-text-color);
+  cursor: pointer;
+  font-size: var(--yc-collapse-header-font-size);
+  font-weight: 500;
+  transition: border-bottom-color var(--yc-transition-duration);
+  outline: none;
+  border-bottom: 1px solid var(--yc-collapse-border-color);
+  &.is-disabled {
+    color: var(--yc-collapse-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+  }
+  &.is-active {
+    border-bottom-color: transparent;
+    .header-angle {
+      transform: rotate(90deg);
+    }
+  }
+  .header-angle {
+    transition: transform var(--yc-transition-duration);
+  }
+}
+
+.yc-collapse-item__content {
+  will-change: height;
+  background-color: var(--yc-collapse-content-bg-color);
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: var(--yc-collapse-content-font-size);
+  color: var(--yc-collapse-content-text-color);
+  border-bottom: 1px solid var(--yc-collapse-border-color);
+  padding-bottom: 25px;
+}
+
+// 动画效果
+.yc-collapse-item-slide-enter-active,
+.yc-collapse-item-slide-leave-active {
+  transition: height var(--yc-transition-duration);
+}

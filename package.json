@@ -26,7 +26,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "pnpm build-es && pnpm build-umd && pnpm move-style",
+    "build": "vite build",
+    "build:lib": "pnpm build-es && pnpm build-umd && pnpm move-style",
     "build-es": "vite build --config vite.es.config.js",
     "build-umd": "vite build --config vite.umd.config.js",
     "move-style": "move-file dist/es/style.css dist/style.css",
